@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+   Container,
+   CssBaseline,
+   ThemeProvider,
+   createTheme,
+} from "@mui/material";
+import React, { useState } from "react";
+import Header from "./Components/Header/Header";
+import Home from "./Pages/Home";
+import { localStorageKeys, maxWidth, routes, themes } from "./Constants";
+import { Route, Routes } from "react-router-dom";
+import Photos from "./Pages/Photos";
+import Footer from "./Components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => { 
+   const getInitialTheme = (): themes => {
+      const savedTheme = localStorage.getItem(localStorageKeys.themePreference);
+       
+      if (savedTheme) {
+         return savedTheme === themes.dark ? themes.dark : themes.light;
+      }
+
+      return window.matchMedia('(prefers-color-scheme: dark)').matches  ? themes.dark : themes.light
+   }
+   
+   const [theme, setTheme] = useState<themes>(getInitialTheme());
+
+   const darkTheme = createTheme({
+      palette: {
+         mode: theme,
+      },
+   });
+
+   const pages = [
+      { title: "Home", url: routes.home },
+      { title: "Photos", url: routes.photos },
+      { title: "Curriculum", url: routes.curriculum },
+   ];
+
+   return (
+      <ThemeProvider theme={darkTheme}>
+         <Container maxWidth={maxWidth}>
+            <CssBaseline />
+            <Header pages={pages} title="Lyons BJJ" setTheme={setTheme}/>
+            <main style={{ marginTop: "5rem", marginBottom: "3rem" }}>
+               <Routes>
+                  <Route path={routes.photos} element={<Photos />} />
+                  <Route path={routes.home} element={<Home />} />
+               </Routes>
+            </main>
+            <Footer />
+         </Container>
+      </ThemeProvider>
+   );
+};
 
 export default App;
