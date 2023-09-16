@@ -1,5 +1,6 @@
 export const elevation = 3;
 export const maxWidth = 'xl';
+export const headerHeight = '5rem';
 
 export const localStorageKeys = {
    themePreference: 'themePreference'

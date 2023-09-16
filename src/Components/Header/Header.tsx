@@ -1,11 +1,11 @@
 import { AppBar, Box, Container, Toolbar } from "@mui/material";
 import React from "react";
 import HeaderIcon from "./HeaderIcon";
-import { elevation, maxWidth, themes } from "../../Constants";
+import { elevation, headerHeight, maxWidth, themes } from "../../Constants";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/material/Link";
-import MobileNavMenu from './MobileNavMenu';
-import SettingsMenu from './SettingsMenu';
+import MobileNavMenu from "./MobileNavMenu";
+import SettingsMenu from "./SettingsMenu";
 
 interface HeaderProps {
    pages: ReadonlyArray<{
@@ -13,12 +13,12 @@ interface HeaderProps {
       url: string;
    }>;
    title: string;
-   setTheme: (newTheme: themes) => void
+   setTheme: (newTheme: themes) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ pages, title, setTheme }) => {
    return (
-      <AppBar elevation={elevation}>
+      <AppBar elevation={elevation} sx={{ height: headerHeight }}>
          <Container maxWidth={maxWidth}>
             <Toolbar>
                <MobileNavMenu pages={pages} />

@@ -1,21 +1,32 @@
 import React from "react";
-import AdbIcon from '@mui/icons-material/Adb';
-import { Typography } from '@mui/material';
+import { Box, Typography } from "@mui/material";
+import Logo from "../../assets/lyons-bjj-logo2.png";
+import { headerHeight } from "../../Constants";
 
 interface IHeaderIconProps {
    title: string;
 }
 
-const HeaderIcon: React.FC<IHeaderIconProps> = ({title}) => {
+const HeaderIcon: React.FC<IHeaderIconProps> = ({ title }) => {
    return (
       <>
-         <AdbIcon sx={{ display: 'flex', mr: 1 }} />
+         <Box sx={{ display: "inline-block", overflow: "hidden" }}>
+            <img
+               style={{
+                  maxWidth: headerHeight,
+                  borderRadius: "50%",
+                  padding: "0.25rem",
+               }}
+               src={Logo}
+               alt="logo"
+            />
+         </Box>
          <Typography
             variant="h6"
             noWrap
             sx={{
-               mr: 2,
-               display: 'flex',
+               mx: 2,
+               display: "flex",
                fontFamily: "monospace",
                fontWeight: 700,
                letterSpacing: ".3rem",

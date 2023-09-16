@@ -42,7 +42,7 @@ const App: React.FC = () => {
          <Container maxWidth={maxWidth}>
             <CssBaseline />
             <Header pages={pages} title="Lyons BJJ" setTheme={setTheme}/>
-            <main style={{ marginTop: "5rem", marginBottom: "3rem" }}>
+            <main style={{ marginTop: '6rem', marginBottom: "3rem" }}>
                <Routes>
                   <Route path={routes.photos} element={<Photos />} />
                   <Route path={routes.home} element={<Home />} />
