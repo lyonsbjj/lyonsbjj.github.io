@@ -1,13 +1,20 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import Content from "./Content";
 import { Typography } from "@mui/material";
+import ReactMarkdown from 'react-markdown';
 
-const TextContent: React.FC<PropsWithChildren> = ({ children }) => {
+const TextContent: React.FC<ITextContentProps> = ({ text }) => {
    return (
       <Content>
-         <Typography variant="body1">{children}</Typography>
+         <Typography variant="body1">
+            <ReactMarkdown children={text} />
+         </Typography>
       </Content>
    );
 };
+
+export interface ITextContentProps {
+   text: string;
+}
 
 export default TextContent;
