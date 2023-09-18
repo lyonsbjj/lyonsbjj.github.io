@@ -81,7 +81,7 @@ const ImageDisplay: React.FC = () => {
             {images.map((image, index) => (
                <ImageListItem key={index}>
                   <img
-                     style={{ cursor: "pointer" }}
+                     // style={{ cursor: "pointer" }}
                      src={image.thumbnail.uri}
                      alt="BJJ"
                      id={`image-${index}`}
