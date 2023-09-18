@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 const TextContent: React.FC<ITextContentProps> = ({ text }) => {
    return (
       <Content>
-         <Typography variant="body1">
+         <Typography variant="body1" component='div'>
             <ReactMarkdown children={text} />
          </Typography>
       </Content>
