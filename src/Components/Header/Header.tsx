@@ -1,11 +1,11 @@
-import { AppBar, Box, Container, Toolbar } from "@mui/material";
+import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import HeaderIcon from "./HeaderIcon";
-import { elevation, headerHeight, maxWidth, themes } from "../../Constants";
-import { Link as RouterLink } from "react-router-dom";
+import { elevation, maxWidth, themes } from "../../Constants";
 import Link from "@mui/material/Link";
 import MobileNavMenu from "./MobileNavMenu";
 import SettingsMenu from "./SettingsMenu";
+import DesktopNavMenu from "./DesktopNavMenu";
 
 interface HeaderProps {
    pages: ReadonlyArray<{
@@ -18,26 +18,34 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ pages, title, setTheme }) => {
    return (
-      <AppBar elevation={elevation} sx={{ height: headerHeight }}>
+      <AppBar elevation={elevation} id="site-header">
          <Container maxWidth={maxWidth}>
             <Toolbar>
                <MobileNavMenu pages={pages} />
-               <HeaderIcon title={title} />
-               <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-                  {pages.map((page) => (
-                     <Link
-                        component={RouterLink}
-                        to={page.url}
-                        color="inherit"
-                        noWrap
-                        key={page.title}
-                        variant="body2"
-                        sx={{ p: 1, flexShrink: 0 }}
-                     >
-                        {page.title}
-                     </Link>
-                  ))}
+               <Box
+                  sx={{
+                     display: { xs: "none", sm: "inline-block", paddingTop: "0.25rem", },
+                     overflow: "hidden"
+                  }}
+               >
+                  <HeaderIcon width='5rem' />
                </Box>
+               <Typography
+                  variant="h6"
+                  noWrap
+                  sx={{
+                     mx: 2,
+                     display: "flex",
+                     fontFamily: "monospace",
+                     fontWeight: 700,
+                     letterSpacing: ".3rem",
+                     color: "inherit",
+                     textDecoration: "none",
+                  }}
+               >
+                  {title}
+               </Typography>
+               <DesktopNavMenu pages={pages} />
                <SettingsMenu setTheme={setTheme} />
             </Toolbar>
          </Container>

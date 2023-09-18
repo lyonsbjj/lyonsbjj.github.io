@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import HeaderIcon from "./HeaderIcon";
+import CloseIcon from "@mui/icons-material/Close";
 
 const MobileNavMenu: React.FC<IMobileNavMenuProps> = ({ pages }) => {
    const location = useLocation();
@@ -15,16 +17,33 @@ const MobileNavMenu: React.FC<IMobileNavMenuProps> = ({ pages }) => {
             title="Navigation Menu"
             size="large"
             edge="start"
-            color="inherit"
             sx={{ display: { xs: "flex", sm: "none" }, mr: 2 }}
          >
             <MenuIcon />
          </IconButton>
          <Drawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+            <Box sx={{paddingLeft: '1rem', paddingTop: '0.5rem'}}>
+               <IconButton
+                  onClick={() => setIsDrawerOpen(false)}
+                  title="Close Navigation Menu"
+                  size="large"
+                  edge="start"
+               >
+                  <CloseIcon />
+               </IconButton>
+            </Box>
+            <Box
+               sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  px: "1rem"
+               }}
+            >
+               <HeaderIcon width="8rem" />
+            </Box>
             {pages.map((page) => (
                <ListItem
                   key={page.title}
-                  color="inherit"
                   onClick={() => setIsDrawerOpen(false)}
                >
                   {location.pathname === page.url && <ArrowRightIcon />}
