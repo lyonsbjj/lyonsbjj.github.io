@@ -56,7 +56,7 @@ Park by the gym and be respectful of our wonderful neighbors! YES this is also a
    ];
 
    return (
-      <Box sx={{ paddingTop: "0.5rem" }}>
+      <Box>
          {questions.map((question, index) => (
             <Accordion key={index}>
                <AccordionSummary

@@ -53,7 +53,7 @@ const App: React.FC = () => {
             <Header pages={pages} title="Lyons BJJ" setTheme={setTheme} />
             <main
                style={{
-                  marginTop: small ? '4rem' : '6rem',
+                  marginTop: small ? '4rem' : '6.5rem',
                   marginBottom: "3rem",
                }}
             >
