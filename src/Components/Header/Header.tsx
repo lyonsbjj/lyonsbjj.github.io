@@ -2,7 +2,6 @@ import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import HeaderIcon from "./HeaderIcon";
 import { elevation, maxWidth, themes } from "../../Constants";
-import Link from "@mui/material/Link";
 import MobileNavMenu from "./MobileNavMenu";
 import SettingsMenu from "./SettingsMenu";
 import DesktopNavMenu from "./DesktopNavMenu";
@@ -24,7 +23,8 @@ const Header: React.FC<HeaderProps> = ({ pages, title, setTheme }) => {
                <MobileNavMenu pages={pages} />
                <Box
                   sx={{
-                     display: { sm: "none", md: "inline-block", paddingTop: "0.25rem", },
+                     display: { xs: "none", sm: "none", md: "inline-block" },
+                     paddingTop: "0.25rem",
                      overflow: "hidden"
                   }}
                >

@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const DesktopNavMenu: React.FC<IDesktopNavMenuProps> = ({ pages }) => {
    return (
-      <Box sx={{ display: { sm: "none", md: "flex" } }}>
+      <Box sx={{ display: { xs: "none", sm: "none", md: "flex" } }}>
          {pages.map((page) => (
             <Link
                component={RouterLink}

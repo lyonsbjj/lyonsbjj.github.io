@@ -17,7 +17,7 @@ import FAQ from './Pages/FAQ';
 import Curriculum from './Pages/Curriculum';
 
 const App: React.FC = () => {
-   const small = useMediaQuery("(max-width:600px)");
+   const medium = useMediaQuery("(max-width:900px)");
    const getInitialTheme = (): themes => {
       const savedTheme = localStorage.getItem(localStorageKeys.themePreference);
 
@@ -53,7 +53,7 @@ const App: React.FC = () => {
             <Header pages={pages} title="Lyons BJJ" setTheme={setTheme} />
             <main
                style={{
-                  marginTop: small ? '4rem' : '6.5rem',
+                  marginTop: medium ? '4.5rem' : '6.5rem',
                   marginBottom: "3rem",
                }}
             >
