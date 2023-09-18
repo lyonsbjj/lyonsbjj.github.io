@@ -8,6 +8,7 @@ export const localStorageKeys = {
 export enum routes {
    home = '/',
    photos = '/photos',
+   schedule ='/schedule',
    curriculum = '/curriculum'
 }
 

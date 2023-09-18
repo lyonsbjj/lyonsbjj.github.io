@@ -85,11 +85,11 @@ const ImageDisplay: React.FC = () => {
                      src={image.thumbnail.uri}
                      alt="BJJ"
                      id={`image-${index}`}
-                     onClick={() =>
-                        document
-                           .getElementById(`image-${index}`)
-                           ?.requestFullscreen()
-                     }
+                     // onClick={() =>
+                     //    document
+                     //       .getElementById(`image-${index}`)
+                     //       ?.requestFullscreen()
+                     // }
                   />
                   {!!image.thumbnail.name && (
                      <ImageListItemBar title={image.thumbnail.name} />
