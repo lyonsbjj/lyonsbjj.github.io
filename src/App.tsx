@@ -13,6 +13,7 @@ import { Route, Routes } from "react-router-dom";
 import Photos from "./Pages/Photos";
 import Footer from "./Components/Footer";
 import Schedule from './Pages/Schedule';
+import FAQ from './Pages/FAQ';
 
 const App: React.FC = () => {
    const small = useMediaQuery("(max-width:600px)");
@@ -40,6 +41,7 @@ const App: React.FC = () => {
       { title: "Home", url: routes.home },
       { title: "Photos", url: routes.photos },
       { title: "Schedule", url: routes.schedule },
+      { title: "FAQ", url: routes.faq },
       // { title: "Curriculum", url: routes.curriculum },
    ];
 
@@ -57,6 +59,7 @@ const App: React.FC = () => {
                <Routes>
                   <Route path={routes.photos} element={<Photos />} />
                   <Route path={routes.schedule} element={<Schedule />} />
+                  <Route path={routes.faq} element={<FAQ />} />
                   <Route path={routes.home} element={<Home />} />
                </Routes>
             </main>

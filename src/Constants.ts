@@ -9,7 +9,8 @@ export enum routes {
    home = '/',
    photos = '/photos',
    schedule ='/schedule',
-   curriculum = '/curriculum'
+   curriculum = '/curriculum',
+   faq = '/faq'
 }
 
 export enum themes {
