@@ -12,6 +12,7 @@ import ReactMarkdown from "react-markdown";
 interface FaqQuestions {
    question: string;
    answer: string;
+   additionalContent?: React.ReactNode;
 }
 
 const FAQ: React.FC = () => {
@@ -25,6 +26,20 @@ const FAQ: React.FC = () => {
          answer: `Our address is 7575 Lyons Rd. Portland, MI 48875.
 
 Park by the gym and be respectful of our wonderful neighbors! YES this is also a residential address (blue/gray house with a three-car garage is ours) and you'll be able to drive down our driveway and around our fence to park in front of the gym. If that area is full, you are able to drive around the LEFT side of the gym to park in the back, or simply park in the driveway. If you see the neighbors big dog "Oakley" out and about, just know he has an E-fence and is stuck in his yard.`,
+         additionalContent: (
+            <Box sx={{ display: 'flex', justifyContent: "center" }}>
+               <iframe
+                  title="google-maps-location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.3025706314493!2d-84.9277810226857!3d42.88756260161086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88229d6a24e10b11%3A0xe762097983806d2e!2sLyons%20Brazilian%20Jiu-Jitsu!5e0!3m2!1sen!2sus!4v1695042772737!5m2!1sen!2sus"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+               ></iframe>
+            </Box>
+         ),
       },
       {
          question: "What should I wear?",
@@ -53,6 +68,7 @@ Park by the gym and be respectful of our wonderful neighbors! YES this is also a
                </AccordionSummary>
                <AccordionDetails>
                   <ReactMarkdown children={question.answer} />
+                  {question.additionalContent}
                </AccordionDetails>
             </Accordion>
          ))}
