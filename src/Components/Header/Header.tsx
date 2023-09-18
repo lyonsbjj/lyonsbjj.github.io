@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ pages, title, setTheme }) => {
                <MobileNavMenu pages={pages} />
                <Box
                   sx={{
-                     display: { xs: "none", sm: "inline-block", paddingTop: "0.25rem", },
+                     display: { sm: "none", md: "inline-block", paddingTop: "0.25rem", },
                      overflow: "hidden"
                   }}
                >

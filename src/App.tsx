@@ -40,9 +40,9 @@ const App: React.FC = () => {
 
    const pages = [
       { title: "Home", url: routes.home },
-      { title: "Photos", url: routes.photos },
       { title: "Schedule", url: routes.schedule },
       { title: "Curriculum", url: routes.curriculum },
+      { title: "Photos", url: routes.photos },
       { title: "FAQ", url: routes.faq },
    ];
 

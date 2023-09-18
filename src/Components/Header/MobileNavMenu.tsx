@@ -17,7 +17,7 @@ const MobileNavMenu: React.FC<IMobileNavMenuProps> = ({ pages }) => {
             title="Navigation Menu"
             size="large"
             edge="start"
-            sx={{ display: { xs: "flex", sm: "none" }, mr: 2 }}
+            sx={{ display: { sm: "flex", md: "none" }, mr: 2 }}
          >
             <MenuIcon />
          </IconButton>
