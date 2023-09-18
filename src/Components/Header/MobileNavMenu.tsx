@@ -18,6 +18,7 @@ const MobileNavMenu: React.FC<IMobileNavMenuProps> = ({ pages }) => {
             size="large"
             edge="start"
             sx={{ display: { sm: "flex", md: "none" }, mr: 2 }}
+            color='inherit'
          >
             <MenuIcon />
          </IconButton>
