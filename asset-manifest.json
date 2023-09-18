@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/lyons-bjj/static/js/main.a0a51dc8.js",
+    "main.js": "/lyons-bjj/static/js/main.c658a559.js",
     "static/js/787.732ef5c6.chunk.js": "/lyons-bjj/static/js/787.732ef5c6.chunk.js",
     "static/media/lyons-bjj-logo2.png": "/lyons-bjj/static/media/lyons-bjj-logo2.5b497de42352fd7d08aa.png",
     "static/media/lyons-bjj-logo.jpg": "/lyons-bjj/static/media/lyons-bjj-logo.b533aa3ef4e0c5acc679.jpg",
     "index.html": "/lyons-bjj/index.html",
-    "main.a0a51dc8.js.map": "/lyons-bjj/static/js/main.a0a51dc8.js.map",
+    "main.c658a559.js.map": "/lyons-bjj/static/js/main.c658a559.js.map",
     "787.732ef5c6.chunk.js.map": "/lyons-bjj/static/js/787.732ef5c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a0a51dc8.js"
+    "static/js/main.c658a559.js"
   ]
 }
