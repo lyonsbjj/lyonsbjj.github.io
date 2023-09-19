@@ -5,7 +5,8 @@ import {
    ImageListItemBar,
    useMediaQuery,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import FullScreenImageModal from "./FullScreenImageModal";
 
 interface Image {
    thumbnail: {
@@ -58,6 +59,9 @@ const images: Image[] = [
 ];
 
 const ImageDisplay: React.FC = () => {
+   const [fullScreenImageIndex, setFullScreenImageIndex] = useState<
+      number | undefined
+   >(undefined);
    const small = useMediaQuery("(max-width:600px)");
    const large = useMediaQuery("(min-width:1200px)");
 
@@ -73,23 +77,17 @@ const ImageDisplay: React.FC = () => {
       return 2;
    };
 
-   // todo - figure out better solution for image full screen
-
    return (
       <Box>
          <ImageList variant="quilted" cols={getColumnNumber()} gap={8}>
             {images.map((image, index) => (
                <ImageListItem key={index}>
                   <img
-                     // style={{ cursor: "pointer" }}
+                     style={{ cursor: "pointer" }}
                      src={image.thumbnail.uri}
                      alt="BJJ"
                      id={`image-${index}`}
-                     // onClick={() =>
-                     //    document
-                     //       .getElementById(`image-${index}`)
-                     //       ?.requestFullscreen()
-                     // }
+                     onClick={() => setFullScreenImageIndex(index)}
                   />
                   {!!image.thumbnail.name && (
                      <ImageListItemBar title={image.thumbnail.name} />
@@ -97,6 +95,33 @@ const ImageDisplay: React.FC = () => {
                </ImageListItem>
             ))}
          </ImageList>
+         <FullScreenImageModal
+            onClose={() => setFullScreenImageIndex(undefined)}
+            imgSource={
+               fullScreenImageIndex !== undefined
+                  ? images[fullScreenImageIndex].thumbnail.uri
+                  : undefined
+            }
+            onPreviousImageClick={
+               fullScreenImageIndex === 0
+                  ? undefined
+                  : () =>
+                       setFullScreenImageIndex((index) => {
+                          if (index !== undefined) {
+                             return index - 1;
+                          }
+                       })
+            }
+            onNextImageClick={
+               fullScreenImageIndex === images.length - 1
+                  ? undefined
+                  : () => setFullScreenImageIndex((index) => {
+                     if (index !== undefined) {
+                        return index + 1;
+                     }
+                  })
+            }
+         />
       </Box>
    );
 };
