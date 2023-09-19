@@ -10,25 +10,35 @@ import NightsStayIcon from "@mui/icons-material/NightsStay";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { localStorageKeys, themes } from "../../Constants";
 
-const ThemeSelector: React.FC<IThemeSelectorProps> = ({setTheme}) => {
+const ThemeSelector: React.FC<IThemeSelectorProps> = ({ setTheme }) => {
    const theme = useTheme();
    const currentTheme = theme.palette.mode;
-   
-   const handleThemeChange = (event: React.MouseEvent<HTMLElement>, newTheme: themes) => {
-      localStorage.setItem(localStorageKeys.themePreference, newTheme);
-      setTheme(newTheme)
-  };
-  
+
+   const handleThemeChange = (
+      event: React.MouseEvent<HTMLElement>,
+      newTheme: themes
+   ) => {
+      if (newTheme && newTheme !== currentTheme) {
+         localStorage.setItem(localStorageKeys.themePreference, newTheme);
+         setTheme(newTheme);
+      }
+   };
+
    return (
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem'}}>
+      <Box
+         sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0.5rem",
+         }}
+      >
          <Typography
-            sx={{ marginRight: '0.5rem'}}
+            sx={{ marginRight: "0.5rem" }}
             onClick={(e) =>
                handleThemeChange(
                   e,
-                  currentTheme === themes.dark
-                     ? themes.light
-                     : themes.dark
+                  currentTheme === themes.dark ? themes.light : themes.dark
                )
             }
          >
@@ -60,7 +70,7 @@ const ThemeSelector: React.FC<IThemeSelectorProps> = ({setTheme}) => {
 };
 
 export interface IThemeSelectorProps {
-   setTheme: (newTheme: themes) => void
+   setTheme: (newTheme: themes) => void;
 }
 
 export default ThemeSelector;
