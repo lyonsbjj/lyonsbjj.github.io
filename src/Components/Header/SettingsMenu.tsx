@@ -2,7 +2,7 @@ import { Box, IconButton, Menu } from "@mui/material";
 import React from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ThemeSelector from "./ThemeSelector";
-import { themes } from '../../Constants';
+import { themes } from '../../constants';
 
 const SettingsMenu: React.FC<ISettingsMenuProps> = ({setTheme}) => {
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

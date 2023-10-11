@@ -1,7 +1,7 @@
 import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import HeaderIcon from "./HeaderIcon";
-import { elevation, maxWidth, themes } from "../../Constants";
+import { elevation, maxWidth, themes } from "../../constants";
 import MobileNavMenu from "./MobileNavMenu";
 import SettingsMenu from "./SettingsMenu";
 import DesktopNavMenu from "./DesktopNavMenu";

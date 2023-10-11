@@ -8,7 +8,7 @@ import {
 import React, { useState } from "react";
 import Header from "./Components/Header/Header";
 import Home from "./Pages/Home";
-import { localStorageKeys, maxWidth, routes, themes } from "./Constants";
+import { localStorageKeys, maxWidth, routes, themes } from "./constants";
 import { Route, Routes } from "react-router-dom";
 import Photos from "./Pages/Photos";
 import Footer from "./Components/Footer";

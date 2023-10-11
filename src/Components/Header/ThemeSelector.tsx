@@ -8,7 +8,7 @@ import {
 import React from "react";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { localStorageKeys, themes } from "../../Constants";
+import { localStorageKeys, themes } from "../../constants";
 
 const ThemeSelector: React.FC<IThemeSelectorProps> = ({ setTheme }) => {
    const theme = useTheme();
