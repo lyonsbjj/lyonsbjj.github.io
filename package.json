@@ -1,7 +1,7 @@
 {
   "name": "lyons-bjj",
   "version": "0.1.0",
-  "homepage": "http://gsimon2.github.io/lyons-bjj",
+  "homepage": "https://lyonsbjj.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",

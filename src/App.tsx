@@ -65,7 +65,7 @@ const App: React.FC = () => {
                   <Route path={routes.home} element={<Home />} />
                </Routes>
             </main>
-            <Footer />
+            {/* <Footer /> */}
          </Container>
       </ThemeProvider>
    );
