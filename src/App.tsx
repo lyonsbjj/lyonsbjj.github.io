@@ -12,9 +12,9 @@ import { localStorageKeys, maxWidth, routes, themes } from "./Constants";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Photos from "./Pages/Photos";
 import Footer from "./Components/Footer";
-import Schedule from './Pages/Schedule';
-import FAQ from './Pages/FAQ';
-import Curriculum from './Pages/Curriculum';
+import Schedule from "./Pages/Schedule";
+import FAQ from "./Pages/FAQ";
+import Curriculum from "./Pages/Curriculum";
 
 const App: React.FC = () => {
    const location = useLocation();
@@ -47,14 +47,14 @@ const App: React.FC = () => {
       { title: "FAQ", url: routes.faq },
    ];
 
-
    React.useEffect(() => {
       window.gtag("event", "page_view", {
-        page_path: location.pathname + location.hash,
-        page_search: location.search,
-        page_hash: location.hash,
+         page_path: location.pathname,
+         page_search: location.search,
+         page_hash: location.hash,
+         page_title: location.pathname,
       });
-    }, [location]);
+   }, [location]);
 
    return (
       <ThemeProvider theme={darkTheme}>
@@ -63,7 +63,7 @@ const App: React.FC = () => {
             <Header pages={pages} title="Lyons BJJ" setTheme={setTheme} />
             <main
                style={{
-                  marginTop: medium ? '4.5rem' : '6.5rem',
+                  marginTop: medium ? "4.5rem" : "6.5rem",
                   marginBottom: "3rem",
                }}
             >
