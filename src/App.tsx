@@ -11,7 +11,6 @@ import Home from "./Pages/Home";
 import { localStorageKeys, maxWidth, routes, themes } from "./Constants";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Photos from "./Pages/Photos";
-import Footer from "./Components/Footer";
 import Schedule from "./Pages/Schedule";
 import FAQ from "./Pages/FAQ";
 import Curriculum from "./Pages/Curriculum";
