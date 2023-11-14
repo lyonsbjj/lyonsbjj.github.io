@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import Header from "./Components/Header/Header";
 import Home from "./Pages/Home";
 import { localStorageKeys, maxWidth, routes, themes } from "./Constants";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Photos from "./Pages/Photos";
 import Footer from "./Components/Footer";
 import Schedule from './Pages/Schedule';
@@ -17,6 +17,7 @@ import FAQ from './Pages/FAQ';
 import Curriculum from './Pages/Curriculum';
 
 const App: React.FC = () => {
+   const location = useLocation();
    const medium = useMediaQuery("(max-width:900px)");
    const getInitialTheme = (): themes => {
       const savedTheme = localStorage.getItem(localStorageKeys.themePreference);
@@ -45,6 +46,15 @@ const App: React.FC = () => {
       { title: "Photos", url: routes.photos },
       { title: "FAQ", url: routes.faq },
    ];
+
+
+   React.useEffect(() => {
+      window.gtag("event", "page_view", {
+        page_path: location.pathname + location.hash,
+        page_search: location.search,
+        page_hash: location.hash,
+      });
+    }, [location]);
 
    return (
       <ThemeProvider theme={darkTheme}>
