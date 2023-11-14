@@ -79,7 +79,7 @@ const ImageDisplay: React.FC = () => {
 
    return (
       <Box>
-         <ImageList variant="quilted" cols={getColumnNumber()} gap={8}>
+         <ImageList variant="masonry" cols={getColumnNumber()} gap={8}>
             {images.map((image, index) => (
                <ImageListItem key={index}>
                   <img
