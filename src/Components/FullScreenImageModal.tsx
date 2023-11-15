@@ -3,6 +3,7 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import { breakpoints } from '../Constants';
 
 const FullScreenImageModal: React.FC<IFullScreenImageModalProps> = ({
    onClose,
@@ -10,7 +11,7 @@ const FullScreenImageModal: React.FC<IFullScreenImageModalProps> = ({
    onNextImageClick,
    onPreviousImageClick,
 }) => {
-   const small = useMediaQuery("(max-width:600px)");
+   const small = useMediaQuery(`(max-width:${breakpoints.sm})`);
 
    return (
       <Modal open={!!imgSource} onClose={onClose}>

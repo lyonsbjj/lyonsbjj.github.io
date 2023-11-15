@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import FullScreenImageModal from "./FullScreenImageModal";
+import { breakpoints } from '../Constants';
 
 interface Image {
    thumbnail: {
@@ -62,8 +63,8 @@ const ImageDisplay: React.FC = () => {
    const [fullScreenImageIndex, setFullScreenImageIndex] = useState<
       number | undefined
    >(undefined);
-   const small = useMediaQuery("(max-width:600px)");
-   const large = useMediaQuery("(min-width:1200px)");
+   const small = useMediaQuery(`(max-width:${breakpoints.sm})`);
+   const large = useMediaQuery(`(max-width:${breakpoints.lg})`);
 
    const getColumnNumber = (): number => {
       if (small) {
