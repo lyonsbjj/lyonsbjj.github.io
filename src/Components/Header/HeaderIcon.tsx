@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/lyons-bjj-logo2.png";
+import { headerLogo } from '../../Content';
 
 const HeaderIcon: React.FC<IHeaderIconProps> = ({ width }) => {
    return (
@@ -8,7 +8,7 @@ const HeaderIcon: React.FC<IHeaderIconProps> = ({ width }) => {
             borderRadius: "50%",
             maxWidth: width,
          }}
-         src={Logo}
+         src={headerLogo}
          alt="logo"
       />
    );

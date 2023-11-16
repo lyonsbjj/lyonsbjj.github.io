@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, styled, useMediaQuery } from "@mui/material";
-import { breakpoints } from "../../../Constants";
+import { breakpoints } from "../../Constants";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
-const CarouselStepper: React.FC<ICarouselStepperProps> = ({ cards, sx }) => {
+const CarouselSwipper: React.FC<ICarouselSwipperProps> = ({ cards, sx }) => {
    const large = useMediaQuery(`(max-width:${breakpoints.lg})`);
    const medium = useMediaQuery(`(max-width:${breakpoints.md})`);
    const small = useMediaQuery(`(max-width:${breakpoints.sm})`);
@@ -98,9 +98,9 @@ const CarouselStepper: React.FC<ICarouselStepperProps> = ({ cards, sx }) => {
    );
 };
 
-export interface ICarouselStepperProps {
+export interface ICarouselSwipperProps {
    cards?: React.ReactNode[];
    sx?: React.CSSProperties;
 }
 
-export default CarouselStepper;
+export default CarouselSwipper;

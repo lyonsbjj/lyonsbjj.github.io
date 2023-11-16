@@ -8,56 +8,7 @@ import {
 import React, { useState } from "react";
 import FullScreenImageModal from "./FullScreenImageModal";
 import { breakpoints } from '../Constants';
-
-interface Image {
-   thumbnail: {
-      uri: string;
-      name?: string;
-   };
-}
-
-const images: Image[] = [
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo1.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo2.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo3.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo4.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo5.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo6.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo7.jpg",
-      },
-   },
-   {
-      thumbnail: {
-         uri: "/assets/photos/photo8.jpg",
-      },
-   },
-];
+import { photos } from '../Content';
 
 const ImageDisplay: React.FC = () => {
    const [fullScreenImageIndex, setFullScreenImageIndex] = useState<
@@ -81,7 +32,7 @@ const ImageDisplay: React.FC = () => {
    return (
       <Box>
          <ImageList variant="masonry" cols={getColumnNumber()} gap={8}>
-            {images.map((image, index) => (
+            {photos.map((image, index) => (
                <ImageListItem key={index}>
                   <img
                      style={{ cursor: "pointer" }}
@@ -100,7 +51,7 @@ const ImageDisplay: React.FC = () => {
             onClose={() => setFullScreenImageIndex(undefined)}
             imgSource={
                fullScreenImageIndex !== undefined
-                  ? images[fullScreenImageIndex].thumbnail.uri
+                  ? photos[fullScreenImageIndex].thumbnail.uri
                   : undefined
             }
             onPreviousImageClick={
@@ -114,7 +65,7 @@ const ImageDisplay: React.FC = () => {
                        })
             }
             onNextImageClick={
-               fullScreenImageIndex === images.length - 1
+               fullScreenImageIndex === photos.length - 1
                   ? undefined
                   : () =>
                        setFullScreenImageIndex((index) => {

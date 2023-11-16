@@ -10,10 +10,10 @@ import {
    useTheme,
 } from "@mui/material";
 import React from "react";
-import { Testimonial, siteNames } from "../../../Testimonial";
+import { Testimonial, siteNames } from "../../Content/Testimonials";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { elevation } from "../../../Constants";
+import { elevation } from "../../Constants";
 import ReactMarkdown from "react-markdown";
 import CloseIcon from "@mui/icons-material/Close";
 

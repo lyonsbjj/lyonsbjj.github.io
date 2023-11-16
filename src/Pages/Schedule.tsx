@@ -1,10 +1,11 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import FullScreenImageModal from "../Components/FullScreenImageModal";
+import { scheduleLink } from '../Content';
 
 const Schedule: React.FC = () => {
    const [showModal, setShowModal] = useState(false);
-   const scheduleLink = "/assets/schedule.jpg";
+   
 
    return (
       <Box sx={{ display: "flex", justifyContent: "center" }}>
