@@ -40,6 +40,18 @@
 
          gtag("config", "G-VTJHZM4D1H", { send_page_view: false });
       </script>
+      <!-- Google tag exception handling -->
+      <script>
+         if (typeof window.onerror == "object") {
+            window.onerror = function (err, url, line) {
+               if (gtag) {
+                  gtag("event", "exception", {
+                     description: line + " " + err
+                  });
+               }
+            };
+         }
+      </script>
    </head>
    <body>
       <noscript>You need to enable JavaScript to run this app.</noscript>
