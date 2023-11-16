@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             </Content>
          </Grid>
          <Grid item sm={12}>
-            <TextContent text={newComersBlurb} />G
+            <TextContent text={newComersBlurb} />
          </Grid>
       </Grid>
    );
