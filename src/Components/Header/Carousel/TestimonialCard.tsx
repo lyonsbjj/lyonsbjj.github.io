@@ -14,13 +14,18 @@ import { Testimonial, siteNames } from "../../../Testimonial";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { elevation } from "../../../Constants";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
+import CloseIcon from "@mui/icons-material/Close";
 
 const TestimonialCard: React.FC<ITestimonialCardProps> = ({ testimonial }) => {
    const [open, setOpen] = React.useState(false);
    const theme = useTheme();
 
-   const content = (props: { lineClamp: number | string; cursor?: string, userSelect?: string }) => (
+   const content = (props: {
+      lineClamp: number | string;
+      cursor?: string;
+      userSelect?: string;
+   }) => (
       <>
          <Box
             sx={{
@@ -102,7 +107,11 @@ const TestimonialCard: React.FC<ITestimonialCardProps> = ({ testimonial }) => {
             <CardContent
                sx={{ display: "flex", flexDirection: "column", width: "100%" }}
             >
-               {content({ lineClamp: 6, cursor: "pointer", userSelect: "none" })}
+               {content({
+                  lineClamp: 6,
+                  cursor: "pointer",
+                  userSelect: "none",
+               })}
             </CardContent>
          </Card>
          <Modal open={open} onClose={() => setOpen(false)} disableAutoFocus>
@@ -115,11 +124,23 @@ const TestimonialCard: React.FC<ITestimonialCardProps> = ({ testimonial }) => {
                   padding: "1rem",
                   border: "1px solid",
                   borderColor: theme.palette.divider,
-                  maxWidth: '30rem',
-                  minWidth: '20rem'
+                  maxWidth: "30rem",
+                  minWidth: "20rem",
                }}
             >
-               {content({ lineClamp: "unset" })}
+               <Box>
+                  <Box sx={{ paddingLeft: "1rem", marginBottom: '-1rem' }}>
+                     <IconButton
+                        onClick={() => setOpen(false)}
+                        title="Close Testimonial Modal"
+                        size="large"
+                        edge="start"
+                     >
+                        <CloseIcon />
+                     </IconButton>
+                  </Box>
+                  {content({ lineClamp: "unset" })}
+               </Box>
             </Paper>
          </Modal>
       </>

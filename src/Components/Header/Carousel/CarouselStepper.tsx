@@ -81,7 +81,7 @@ const CarouselStepper: React.FC<ICarouselStepperProps> = ({ cards, sx }) => {
             grabCursor={true}
             autoplay={{
                delay: 3000,
-               disableOnInteraction: false,
+               disableOnInteraction: small,
                pauseOnMouseEnter: true
             }}
             pagination={{
