@@ -8,7 +8,7 @@ import {
 import React, { useState } from "react";
 import Header from "./Components/Header/Header";
 import Home from "./Pages/Home";
-import { localStorageKeys, maxWidth, routes, themes } from "./Constants";
+import { breakpoints, localStorageKeys, maxWidth, routes, themes } from "./Constants";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Photos from "./Pages/Photos";
 import Schedule from "./Pages/Schedule";
@@ -17,7 +17,7 @@ import Curriculum from "./Pages/Curriculum";
 
 const App: React.FC = () => {
    const location = useLocation();
-   const medium = useMediaQuery("(max-width:900px)");
+   const medium = useMediaQuery(`(max-width:${breakpoints.md})`);
    const getInitialTheme = (): themes => {
       const savedTheme = localStorage.getItem(localStorageKeys.themePreference);
 

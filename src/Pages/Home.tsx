@@ -3,6 +3,9 @@ import React from "react";
 import TextContent from "../Components/TextContent";
 import Content from "../Components/Content";
 import Logo from "../assets/lyons-bjj-logo.jpg";
+import CarouselStepper from "../Components/Header/Carousel/CarouselStepper";
+import { Testimonials } from "../Testimonial";
+import TestimonialCard from "../Components/Header/Carousel/TestimonialCard";
 
 const businessStatement = `
 We provide top tier instruction in Brazilian Jiu-Jitsu in a safe, caring, and positive environment.
@@ -82,8 +85,19 @@ const Home: React.FC = () => {
          <Grid item sm={12} md={6} lg={8}>
             <TextContent text={blurb} />
          </Grid>
+         <Grid item xs={12}>
+            <Content sx={{ flexDirection: "column" }}>
+               <Typography variant="h4">Testimonials</Typography>
+               <CarouselStepper
+                  cards={Testimonials.map((t, i) => (
+                     <TestimonialCard testimonial={t} key={i} />
+                  ))}
+               />
+               {/* <TestimonialCard testimonial={Testimonials[0]} /> */}
+            </Content>
+         </Grid>
          <Grid item sm={12}>
-            <TextContent text={newComersBlurb} />
+            <TextContent text={newComersBlurb} />G
          </Grid>
       </Grid>
    );
