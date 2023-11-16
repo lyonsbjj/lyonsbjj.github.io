@@ -45,6 +45,9 @@ const TestimonialCard: React.FC<ITestimonialCardProps> = ({ testimonial }) => {
                   textOverflow: "ellipsis",
                   overflow: "hidden",
                   cursor: props.cursor ?? "default",
+                  "> p": {
+                     marginTop: "0 !important"
+                  }
                }}
             >
                <ReactMarkdown children={testimonial.content} />
@@ -129,7 +132,7 @@ const TestimonialCard: React.FC<ITestimonialCardProps> = ({ testimonial }) => {
                }}
             >
                <Box>
-                  <Box sx={{ paddingLeft: "1rem", marginBottom: '-1rem' }}>
+                  <Box sx={{ paddingLeft: "1rem", marginBottom: '-0.5rem' }}>
                      <IconButton
                         onClick={() => setOpen(false)}
                         title="Close Testimonial Modal"
