@@ -22,7 +22,7 @@ export const Testimonials: Testimonial[] = [
    },
    {
       content: `Highly recommend! A must try for all women in my opinion. You may just surprise yourself at how much you love it like I did! If you’re looking for a family friendly atmosphere and a positive place for your kids to learn and grow, this is it. Coach Jaymin & Coach Liz are phenomenal at teaching while making the sport interesting and achievable, no matter your skill level coming in!`,
-      name: "Erice Feldpausch",
+      name: "Erica Feldpausch",
       role: "Student",
       siteName: siteNames.facebook,
       link: "https://www.facebook.com/LyonsBJJ/reviews",
