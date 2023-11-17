@@ -15,14 +15,14 @@ const ImageDisplay: React.FC = () => {
       number | undefined
    >(undefined);
    const small = useMediaQuery(`(max-width:${breakpoints.sm})`);
-   const large = useMediaQuery(`(max-width:${breakpoints.lg})`);
+   const isLargeOrBigger = useMediaQuery(`(min-width:${breakpoints.lg})`);
 
    const getColumnNumber = (): number => {
       if (small) {
          return 1;
       }
 
-      if (large) {
+      if (isLargeOrBigger) {
          return 4;
       }
 
