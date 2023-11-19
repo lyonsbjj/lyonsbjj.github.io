@@ -9,7 +9,7 @@ export enum routes {
    home = '/',
    photos = '/photos',
    schedule ='/schedule',
-   curriculum = '/curriculum',
+   contact = '/contact',
    faq = '/faq'
 }
 

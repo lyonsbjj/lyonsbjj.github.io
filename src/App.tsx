@@ -13,7 +13,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Photos from "./Pages/Photos";
 import Schedule from "./Pages/Schedule";
 import FAQ from "./Pages/FAQ";
-import Curriculum from "./Pages/Curriculum";
+import Contact from "./Pages/Contact";
 
 const App: React.FC = () => {
    const location = useLocation();
@@ -41,9 +41,9 @@ const App: React.FC = () => {
    const pages = [
       { title: "Home", url: routes.home },
       { title: "Schedule", url: routes.schedule },
-      { title: "Curriculum", url: routes.curriculum },
       { title: "Photos", url: routes.photos },
       { title: "FAQ", url: routes.faq },
+      { title: "Contact", url: routes.contact }
    ];
 
    React.useEffect(() => {
@@ -69,7 +69,7 @@ const App: React.FC = () => {
                <Routes>
                   <Route path={routes.photos} element={<Photos />} />
                   <Route path={routes.schedule} element={<Schedule />} />
-                  <Route path={routes.curriculum} element={<Curriculum />} />
+                  <Route path={routes.contact} element={<Contact />} />
                   <Route path={routes.faq} element={<FAQ />} />
                   <Route path={routes.home} element={<Home />} />
                </Routes>
