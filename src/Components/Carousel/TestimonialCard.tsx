@@ -51,7 +51,6 @@ const TestimonialCard: React.FC<ITestimonialCardProps> = ({ testimonial }) => {
                }}
             >
                <ReactMarkdown children={testimonial.content} />
-               {/* {testimonial.content} */}
             </Typography>
          </Box>
          <Divider variant="middle" />

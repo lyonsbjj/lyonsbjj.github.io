@@ -5,6 +5,7 @@ import {
    Link,
    Typography,
    useMediaQuery,
+   useTheme,
 } from "@mui/material";
 import React from "react";
 import Content from "../Components/Content";
@@ -29,19 +30,19 @@ const Curriculum: React.FC = () => {
                         fontSize="large"
                         sx={{ marginRight: "1rem" }}
                      />
-                     <Link target="_blank" href={ContactInfo.address.href}>
+                     <Link target="_blank" href={ContactInfo.address.href} sx={{ alignSelf: 'center'}}>
                         {ContactInfo.address.text}
                      </Link>
                   </Box>
                   <Box sx={{ display: "flex", padding: "0.5rem" }}>
                      <PhoneIcon fontSize="large" sx={{ marginRight: "1rem" }} />
-                     <Link target="_blank" href={ContactInfo.phone.href}>
+                     <Link target="_blank" href={ContactInfo.phone.href} sx={{ alignSelf: 'center'}}>
                         {ContactInfo.phone.text}
                      </Link>
                   </Box>
                   <Box sx={{ display: "flex", padding: "0.5rem" }}>
                      <EmailIcon fontSize="large" sx={{ marginRight: "1rem" }} />
-                     <Link target="_blank" href={ContactInfo.email.href}>
+                     <Link target="_blank" href={ContactInfo.email.href} sx={{ alignSelf: 'center'}}>
                         {ContactInfo.email.text}
                      </Link>
                   </Box>
