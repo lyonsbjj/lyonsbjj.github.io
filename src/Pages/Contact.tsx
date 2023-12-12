@@ -12,6 +12,7 @@ import { ContactInfo } from "../Content";
 import BusinessIcon from "@mui/icons-material/Business";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { breakpoints } from "../Constants";
 
 const Curriculum: React.FC = () => {
@@ -43,6 +44,12 @@ const Curriculum: React.FC = () => {
                      <EmailIcon fontSize="large" sx={{ marginRight: "1rem" }} />
                      <Link target="_blank" href={ContactInfo.email.href} sx={{ alignSelf: 'center'}}>
                         {ContactInfo.email.text}
+                     </Link>
+                  </Box>
+                  <Box sx={{ display: "flex", padding: "0.5rem" }}>
+                     <FacebookIcon fontSize="large" sx={{ marginRight: "1rem" }} />
+                     <Link target="_blank" href={ContactInfo.facebook.href} sx={{ alignSelf: 'center'}}>
+                        {ContactInfo.facebook.text}
                      </Link>
                   </Box>
                </Box>
